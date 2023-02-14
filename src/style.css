@@ -81,3 +81,25 @@ ul li {
 ul li:hover {
   background-color: #eee;
 }
+
+@media only screen and (max-width: 600px) {
+  ul li {
+    display: grid !important;
+  }
+  .layout .head {
+    display: block;
+    background: #babdbe;
+    padding: 3px;
+  }
+  .filterBox {
+    width: 95%;
+  }
+  .layout .head input {
+    width: 90%;
+    padding: 9px;
+    margin: 5px;
+    /* margin-left: 15px; */
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

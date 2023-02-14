@@ -14,6 +14,8 @@ const Layout = () => {
   const [filterItem, setFilterItem] = useState(null);
   const fetchData = async () => {
     const movilist = await apicall.getData();
+    setMovies(movilist.results);
+
     if (movilist && movilist.results) {
       setMovies(movilist.results);
     }
