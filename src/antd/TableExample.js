@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Button, Checkbox, Divider, Radio, Table, Tag } from "antd";
+import { Button, Checkbox, Divider, message, Table, Tag } from "antd";
+import CustomModal from "./CustomModal";
 // import "antd/dist/antd.css";
-import { getStatus } from "./Helpers";
+// import { getStatus } from "./Helpers";
 
 const TableExample = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
-  const [data, setData] = useState(null);
+  const [show, setshow] = useState(false);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [paginateData, setpaginateData] = useState(null);
   useEffect(() => {
-    setLoading(true);
-    getData(10, 1);
-    setLoading(false);
+    // setLoading(true);
+    // getData(10, 1);
+    // setLoading(false);
   }, []);
   const getData = async (skip) => {
     const res = await fetch(
@@ -52,15 +54,15 @@ const TableExample = () => {
       },
     },
 
-    {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
-      render: (_, record) => {
-        console.log("record", record);
-        return <Tag color={getStatus(record.status)}>{record.status}</Tag>;
-      },
-    },
+    // {
+    //   title: "Status",
+    //   dataIndex: "status",
+    //   key: "status",
+    //   render: (_, record) => {
+    //     console.log("record", record);
+    //     return <Tag color={getStatus(record.status)}>{record.status}</Tag>;
+    //   },
+    // },
     {
       title: "Address",
       dataIndex: "address",
@@ -104,12 +106,20 @@ const TableExample = () => {
     await getData(paginate);
     setLoading(false);
   };
+  const handleSubmit = (values) => {
+    setData([...data, values]);
+    message.success("data added successfully");
+    message.error("data added successfully");
+    message.warning("data added successfully");
+    setshow(false);
+  };
   return (
     <div>
       <h1>Button</h1>
       <Button loading>khbjhb</Button>
       <h1>Table</h1>
       <Divider />
+      <Button onClick={() => setshow(true)}>Add </Button>
       {data && data.length > 0 && (
         <Table
           rowSelection={rowSelection}
@@ -126,6 +136,11 @@ const TableExample = () => {
           // onChange={handleTableChange}
         />
       )}
+      <CustomModal
+        isModalOpen={show}
+        handleCancel={() => setshow(false)}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };
