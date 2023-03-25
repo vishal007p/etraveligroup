@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from 'react'
 import Layout from "../../container/Layout";
 import NewProduct from "./NewProduct";
 import Categories from "../../component/Categories";
+import { useEffect } from 'react';
+import ProductCard from '../../component/ProductCard/ProductCard';
 const cssZindex = {
   Zindex: 1,
 };
 
 function index() {
+
+
+
+
+
+
+
   return (
     <Layout>
       {/* <!-- Navbar Start --> */}
       <Categories />
       {/* <!-- Navbar End --> */}
       {/* <!-- Featured Start --> */}
+
+      {/* 
       <div className="container-fluid pt-5">
         <div className="row px-xl-5 pb-3">
           <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -52,101 +63,26 @@ function index() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+
+
       {/* <!-- Featured End --> */}
       {/* <!-- Categories Start --> */}
       <div className="container-fluid pt-5">
         <div className="row px-xl-5 pb-3">
-          <div className="col-lg-4 col-md-6 pb-1">
-            <div
-              className="cat-item d-flex flex-column border mb-4"
-              style={{ padding: "30px" }}
-            >
-              <p className="text-right">15 Products</p>
-              <a
-                href=""
-                className="cat-img position-relative overflow-hidden mb-3"
-              >
-                <img className="img-fluid" src="img/cat-1.jpg" alt="" />
-              </a>
-              <h5 className="font-weight-semi-bold m-0">Men's dresses</h5>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 pb-1">
-            <div
-              className="cat-item d-flex flex-column border mb-4"
-              style={{ padding: "30px" }}
-            >
-              <p className="text-right">15 Products</p>
-              <a
-                href=""
-                className="cat-img position-relative overflow-hidden mb-3"
-              >
-                <img className="img-fluid" src="img/cat-2.jpg" alt="" />
-              </a>
-              <h5 className="font-weight-semi-bold m-0">Women's dresses</h5>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 pb-1">
-            <div
-              className="cat-item d-flex flex-column border mb-4"
-              style={{ padding: "30px" }}
-            >
-              <p className="text-right">15 Products</p>
-              <a
-                href=""
-                className="cat-img position-relative overflow-hidden mb-3"
-              >
-                <img className="img-fluid" src="img/cat-3.jpg" alt="" />
-              </a>
-              <h5 className="font-weight-semi-bold m-0">Baby's dresses</h5>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 pb-1">
-            <div
-              className="cat-item d-flex flex-column border mb-4"
-              style={{ padding: "30px" }}
-            >
-              <p className="text-right">15 Products</p>
-              <a
-                href=""
-                className="cat-img position-relative overflow-hidden mb-3"
-              >
-                <img className="img-fluid" src="img/cat-4.jpg" alt="" />
-              </a>
-              <h5 className="font-weight-semi-bold m-0">Accerssories</h5>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 pb-1">
-            <div
-              className="cat-item d-flex flex-column border mb-4"
-              style={{ padding: "30px" }}
-            >
-              <p className="text-right">15 Products</p>
-              <a
-                href=""
-                className="cat-img position-relative overflow-hidden mb-3"
-              >
-                <img className="img-fluid" src="img/cat-5.jpg" alt="" />
-              </a>
-              <h5 className="font-weight-semi-bold m-0">Bags</h5>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 pb-1">
-            <div
-              className="cat-item d-flex flex-column border mb-4"
-              style={{ padding: "30px" }}
-            >
-              <p className="text-right">15 Products</p>
-              <a
-                href=""
-                className="cat-img position-relative overflow-hidden mb-3"
-              >
-                <img className="img-fluid" src="img/cat-6.jpg" alt="" />
-              </a>
-              <h5 className="font-weight-semi-bold m-0">Shoes</h5>
-            </div>
-          </div>
+
+
+
+
+
+          <ProductCard />
+
+
+
+
+
+
         </div>
       </div>
       {/* <!-- Categories End --> */}
@@ -195,239 +131,18 @@ function index() {
             <span className="px-2">Trandy Products</span>
           </h2>
         </div>
+
+        
         <div className="row px-xl-5 pb-3">
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-3.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-4.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-5.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-6.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-7.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div className="card product-item border-0 mb-4">
-              <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                <img
-                  className="img-fluid w-100"
-                  src="img/product-8.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                <h6 className="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                <div className="d-flex justify-content-center">
-                  <h6>$123.00</h6>
-                  <h6 className="text-muted ml-2">
-                    <del>$123.00</del>
-                  </h6>
-                </div>
-              </div>
-              <div className="card-footer d-flex justify-content-between bg-light border">
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-eye text-primary mr-1"></i>View Detail
-                </a>
-                <a href="" className="btn btn-sm text-dark p-0">
-                  <i className="fas fa-shopping-cart text-primary mr-1"></i>Add
-                  To Cart
-                </a>
-              </div>
-            </div>
-          </div>
+           
+         
+       
+          
+         
+        <ProductCard />
+       
+         
+          
         </div>
       </div>
       {/* <!-- Products End --> */}
