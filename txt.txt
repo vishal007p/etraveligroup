@@ -1,0 +1,6 @@
+-> login / signup(social login)
+-> logout
+-> product listing
+-> detail page
+-> cart 
+-> checkout
